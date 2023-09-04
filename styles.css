@@ -1,0 +1,315 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+
+.navbar {
+    background-color: wheat;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    color: #fff;
+    font-size: 24px;
+    height: 60px;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row; /* Horizontal layout for larger screens */
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+.nav-links.slide-in {
+    max-height: 300px; /* Adjust the height based on your content */
+}
+.menu-btn.rotate {
+    transform: rotate(90deg); /* Rotate the button 90 degrees */
+}
+.menu-btn i {
+    color: black}
+
+nav a:hover {
+    color: #007bff;
+}
+
+.menu-btn {
+    display: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 24px;
+}
+
+/* Media query for smaller screens (e.g., mobile devices) */
+@media screen and (max-width: 768px) {
+    .menu-btn {
+        display: block; /* Show the menu button */
+    }
+
+    .nav-links {
+        display: none; /* Hide the navigation links by default */
+        flex-direction: column; /* Vertical layout for smaller screens */
+        background-color: wheat;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        padding: 0; /* Remove padding to eliminate extra space */
+        margin: 0; /* Remove margin to eliminate extra space */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show the navigation links when active */
+    }
+
+    .nav-links li {
+        text-align: center;
+        margin: 0; /* Remove margin to eliminate extra space */
+        padding: 10px 0; /* Add padding for spacing between items*/
+    }
+}
+
+.hero {
+    background-image: url('images/ELECTRIIC.jpg');
+    background-size: cover;
+    background-position: center;
+    
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    padding: 100px 0;
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Add animation styles for the hero text */
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color:rgb(190, 176, 248); /* Change the text color */
+    font-family: 'Helvetica Neue', sans-serif; /* Choose an elegant font-family */
+    font-weight: 700; /* Make the text bold */
+    letter-spacing: 1px; /* Adjust letter spacing */
+    line-height: 1.4; /* Adjust line height for readability */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add a subtle text shadow for depth */
+    animation: fadeInUp 1s ease-in-out forwards, slideUp 1s ease-in-out forwards, scaleUp 1s ease-in-out forwards;
+}
+
+/* Text color animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide-in animation */
+@keyframes slideUp {
+    0% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Scale-up animation */
+@keyframes scaleUp {
+    0% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn {
+    display: inline-block;
+    background-color:  #007bff; /* Change the text color */
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.btn:hover {
+    background-color: #0056b3;
+}
+h1 {
+    font-size: 48px; /* Larger font size for the brand name */
+    margin-bottom: 10px; /* Smaller margin for spacing */
+    color: #007bff; /* Change the text color */
+}
+/* New styles for the tagline with animations */
+/* ... (your existing CSS) ... */
+
+/* Add fade-in animation for the tagline */
+.tagline {
+    font-size: 24px;
+    margin-top: 20px;
+    background-color:wheat;
+    opacity: 0;
+    transform: translateY(20px);
+    color: rgb(36, 2, 102); /* Bright and colorful text color (adjust as needed) */
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* Define the fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Existing styles for the hero section and navbar */
+/* ... (use the CSS from your previous styles) */
+
+/* New styles for the "Videos and Demos" section */
+.learn-more {
+    padding: 20px;
+}
+
+.video-demo {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.video-container video {
+    max-width: 100%;
+}
+
+
+/* Styles for the product gallery */
+.product-gallery {
+    position: relative;
+    overflow: hidden;
+    margin: 20px;
+}
+
+.gallery-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.product-item {
+    flex: 0 0 33.33%;
+    text-align: center;
+    padding: 20px;
+    height: 100%;
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-item h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.product-item p {
+    font-size: 16px;
+}
+
+.product-item .btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.prev-button,
+.next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.prev-button:hover,
+.next-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 768px) {
+    .product-item {
+        flex: 0 0 50%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .product-item {
+        flex: 0 0 100%;
+    }
+}
+
+.product-item img {
+    width: 250px;
+}
+
+.product-item video {
+    width: 200px;
+}
+
+@media screen and (min-width:802){
+    
+}
+
+
+
